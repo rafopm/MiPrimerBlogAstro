@@ -1,5 +1,5 @@
 {
-  "name": "miprimerblogastro",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.7.1"
+    "astro": "^4.8.4"
   }
 }
