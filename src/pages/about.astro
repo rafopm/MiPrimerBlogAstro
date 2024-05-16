@@ -1,0 +1,74 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const pageTitle = "Acerca de mi";
+
+const identity = {
+    firstName: "Rafael",
+    country: "Peru",
+    occupation: "Programador",
+    hobbies: ["Musica", "Plantas", "Basketball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = true;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    
+    <h2>... and my new Astro site!</h2>
+
+    <p>Estos son algunos datos sobre mi:</p>
+    <ul>
+        <li>Mi nombre es {identity.firstName}.</li>
+        <li>Vivo en {identity.country}.</li>
+        <li>Trabajo como {identity.occupation}.</li>
+        {
+            identity.hobbies.length >= 2 && (
+                <li>
+                    Dos de los hobbies que tengo son {identity.hobbies[0]} y{" "}
+                    {identity.hobbies[1]}.
+                </li>
+            )
+        }
+    </ul>
+
+    <br />
+
+    <p>
+        Mis skills son:
+        <ul>
+            {skills.map((skills) => <li class="skill">{skills}</li>)}
+        </ul>
+    </p>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {
+        goal === 3 ? (
+            <p>My goal is to finish in 3 days.</p>
+        ) : (
+            <p>My goal is not 3 days.</p>
+        )
+    }
+</BaseLayout>
+
+<style>
+    .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+    }
+</style>
